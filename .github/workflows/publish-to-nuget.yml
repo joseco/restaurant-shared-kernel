@@ -22,4 +22,4 @@ jobs:
         run: dotnet pack SharedKernel/SharedKernel.csproj --configuration Release
 
       - name: Pushing nuget package 
-        run: dotnet nuget push  SharedKernel/bin/Release/SharedKernel.1.0.0.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source "github"
+        run: dotnet nuget push  SharedKernel/bin/Release/SharedKernel.1.0.0.nupkg --source "github"
