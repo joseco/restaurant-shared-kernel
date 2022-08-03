@@ -16,7 +16,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Packing 
-        run: dotnet pack SharedKernel/SharedKernel.csproj --configuration Release
+        run: dotnet pack SharedKernel/SharedKernel.csproj --configuration Release --output .
 
       - name: Pushing nuget package 
         run: dotnet nuget push  SharedKernel/bin/Release/NurRestaurantSharedKernel.1.0.0.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source ${{ secrets.NUGET_REPO }}
