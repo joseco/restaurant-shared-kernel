@@ -16,7 +16,7 @@ jobs:
           dotnet-version: 6.0.x
 
       - name: Adding github registry
-        run: dotnet nuget add source --username USERNAME --password ${{ secrets.NUGET_API_KEY }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/OWNER/index.json"
+        run: dotnet nuget add source --username ${{ secrets.GH_USERNAME }} --password ${{ secrets.NUGET_API_KEY }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/${{ secrets.REPO_OWNER }}/index.json"
 
       - name: Packing 
         run: dotnet pack SharedKernel/SharedKernel.csproj --configuration Release
